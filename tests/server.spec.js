@@ -43,16 +43,16 @@ describe('Operaciones CRUD de cafes', () => {
   })
 
   it('It should response status code 400 if ID param does not match to request body ID', async () => {
-    const cafeIdParam = 3
-    const cafeIdCuerpo = 4
-    const cafeActualizado = {
-      id: cafeIdCuerpo,
-      name: 'Café Actualizado'
+    const coffeIdParam = 3
+    const coffeeIdBody = 4
+    const updatedCoffee = {
+      id: coffeeIdBody,
+      name: 'Updated Coffee'
     }
 
     const response = await request(serverApp)
-      .put(`/cafes/${cafeIdParam}`)
-      .send(cafeActualizado)
+      .put(`/cafes/${coffeIdParam}`)
+      .send(updatedCoffee)
 
     expect(response.statusCode).toEqual(400)
 
